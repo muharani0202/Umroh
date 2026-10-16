@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. ABC Wisata Tour & Travel - Travel Umroh & Haji Plus Terpercaya</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-navy: #0F2027;
+            --secondary-emerald: #0b4f3a;
+            --accent-gold: #D4AF37;
+            --accent-gold-dark: #b59226;
+            --light-bg: #F8F9FA;
+            --dark-text: #2D3748;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-navy);
+            color: #fff;
+            font-size: 0.85rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand span {
+            color: var(--accent-gold);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-text);
+            margin: 0 4px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold-dark);
+        }
+
+        /* Custom Buttons */
+        .btn-gold {
+            background: linear-gradient(135deg, #E6C200 0%, var(--accent-gold) 100%);
+            color: #000;
+            font-weight: 600;
+            border: none;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-outline-gold {
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-weight: 600;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-gold:hover {
+            background-color: var(--accent-gold);
+            color: #000;
+        }
+
+        .btn-navy {
+            background-color: var(--primary-navy);
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-navy:hover {
+            background-color: var(--secondary-emerald);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(15, 32, 39, 0.88) 0%, rgba(11, 79, 58, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1565552070098-013d47284ad6?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            padding: 120px 0 100px;
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .stats-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Section Titles */
+        .section-title {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .section-title p {
+            color: #6c757d;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: var(--accent-gold);
+            display: block;
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Advantage Cards */
+        .advantage-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent-gold-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+        }
+
+        /* Package Cards */
+        .package-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .package-card:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            border-color: var(--accent-gold);
+        }
+
+        .package-header {
+            background: var(--primary-navy);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .package-header.popular {
+            background: linear-gradient(135deg, var(--secondary-emerald) 0%, var(--primary-navy) 100%);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-gold);
+            color: #000;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .package-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        /* Gallery Grid */
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 32, 39, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Testimonial Card */
+        .testimonial-card {
+            border: none;
+            border-radius: 15px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+
+        .testimonial-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-gold);
+        }
+
+        /* FAQ Accordion */
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--primary-navy);
+            font-weight: 600;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 32px;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-wa:hover {
+            background-color: #128c7e;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-navy);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        footer h5 {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar py-2 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+                <span class="me-3"><i class="fas fa-certificate text-warning me-1"></i> Izin Resmi Kemenag PPIU No. 123/2021</span>
+                <span><i class="fas fa-clock text-warning me-1"></i> Jam Operasional: Sen - Sab (08.00 - 17.00)</span>
+            </div>
+            <div>
+                <a href="tel:+6281234567890" class="text-white text-decoration-none me-3"><i class="fas fa-phone me-1"></i> (021) 1234-5678</a>
+                <a href="https://wa.me/6281234567890" target="_blank" class="text-white text-decoration-none"><i class="fab fa-whatsapp text-success me-1"></i> +62 812-3456-7890</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fas fa-kaaba fa-2x me-2 text-warning"></i>
+                <div>
+                    <span class="d-block lh-1 fs-4">PT. ABC WISATA</span>
+                    <small class="text-muted fs-6 font-monospace" style="font-size: 0.65rem !important; letter-spacing: 1px;">TOUR & TRAVEL</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#keunggulan">Keunggulan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#paket">Paket Umroh</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang Kami</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="#konsultasi" class="btn btn-gold rounded-pill px-4">Daftar Sekarang</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="hero-badge mb-3">
+                        <i class="fas fa-star me-1"></i> Travel Umroh & Haji Plus Terpercaya
+                    </div>
+                    <h1 class="display-4 fw-bold mb-4">Wujudkan Ibadah Umroh Nyaman, Khusyuk, & Terpercaya</h1>
+                    <p class="lead mb-4 opacity-90">Bimbingan ibadah sesuai sunnah, kepastian jadwal keberangkatan direct flight, serta pelayanan fasilitas bintang 5 untuk kenyamanan ibadah Anda dan keluarga.</p>
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="#paket" class="btn btn-gold btn-lg rounded-pill px-4">Lihat Paket Umroh</a>
+                        <a href="https://wa.me/6281234567890?text=Halo%20PT.%20ABC%20Wisata,%20saya%20ingin%20konsultasi%20paket%20Umroh" target="_blank" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            <i class="fab fa-whatsapp me-2"></i>Konsultasi Gratis
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="stats-card">
+                                <h2 class="fw-bold text-warning mb-1">10,000+</h2>
+                                <p class="mb-0 text-white-50 fs-7">Jamaah Terberangkatkan</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-card">
+                                <h2 class="fw-bold text-warning mb-1">100%</h2>
+                                <p class="mb-0 text-white-50 fs-7">Izin Resmi PPIU Kemenag</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-card">
+                                <h2 class="fw-bold text-warning mb-1">Hotel 5★</h2>
+                                <p class="mb-0 text-white-50 fs-7">Dekat Pelataran Masjid</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-card">
+                                <h2 class="fw-bold text-warning mb-1">4.9/5.0</h2>
+                                <p class="mb-0 text-white-50 fs-7">Rating Kepuasan Jamaah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Keunggulan / Why Choose Us -->
+    <section id="keunggulan" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="section-title text-center">
+                <h2>Mengapa Memilih PT. ABC Tour?</h2>
+                <p>Komitmen kami memberikan pelayanan terbaik demi kenyamanan ibadah Anda</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card advantage-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Terdaftar Resmi Kemenag</h5>
+                        <p class="text-muted mb-0">Legalitas resmi PPIU No. 123/2021 Kemenag RI, menjamin keamanan dan kepastian seluruh proses perjalanan ibadah Anda.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card advantage-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Pembimbing Sesuai Sunnah</h5>
+                        <p class="text-muted mb-0">Didampingi Pembimbing / Muthawwif berpengalaman, ramah, dan membimbing tata cara ibadah sesuai Al-Qur'an dan Sunnah.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card advantage-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-plane-departure"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Penerbangan Direct (Direct Flight)</h5>
+                        <p class="text-muted mb-0">Kepastian jadwal dan menggunakan maskapai terpercaya (Saudia Airlines / Garuda Indonesia) tanpa transit.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card advantage-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Hotel Dekat Masjid</h5>
+                        <p class="text-muted mb-0">Akomodasi hotel pilihan bintang 3, 4, dan 5 berjarak dekat dengan Masjidil Haram & Masjid Nabawi.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card advantage-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Fasilitas & Kuliner Indonesia</h5>
+                        <p class="text-muted mb-0">Penyediaan makanan buffet 3x sehari dengan menu masakan Indonesia yang cocok dengan selera jamaah.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card advantage-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Perlengkapan Eksklusif</h5>
+                        <p class="text-muted mb-0">Set perlengkapan umroh berkualitas (Koper premium, kain ihram/mukena, tas paspor, batik seragam, dll).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paket Umroh Section -->
+    <section id="paket" class="py-5">
+        <div class="container py-4">
+            <div class="section-title text-center">
+                <h2>Pilihan Paket Umroh Populer</h2>
+                <p>Pilih paket ibadah umroh yang sesuai dengan kebutuhan dan anggaran Anda</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Paket Reguler -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card h-100 d-flex flex-column">
+                        <div class="package-header">
+                            <h4 class="fw-bold mb-1">Umroh Reguler (Bintang 3)</h4>
+                            <p class="text-white-50 mb-3">Ekonomis & Tetap Nyaman</p>
+                            <div class="package-price">Rp 28.500.000 <span class="fs-6 fw-normal text-white-50">/ pax</span></div>
+                        </div>
+                        <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Durasi:</strong> 9 Hari</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Maskapai:</strong> Lion Air / Batik Air Direct</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Hotel Makkah:</strong> Fajr Badee (Bintang 3)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Hotel Madinah:</strong> Concorde Dar Al Taqwa</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Makan 3x Sehari Menu Indonesia</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Free Air Zamzam (Sesuai Regulasi)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Bimbingan Manasik 2x</li>
+                            </ul>
+                            <a href="#konsultasi" onclick="setPackage('Paket Umroh Reguler Bintang 3')" class="btn btn-outline-gold w-100 py-2 rounded-pill">Pesan Paket Ini</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paket VIP / Executive -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card h-100 d-flex flex-column position-relative shadow-lg">
+                        <div class="package-header popular">
+                            <span class="package-badge">Paling Diminati</span>
+                            <h4 class="fw-bold mb-1">Umroh VIP (Bintang 5)</h4>
+                            <p class="text-white-50 mb-3">Kenyamanan Akses Terbaik</p>
+                            <div class="package-price">Rp 35.000.000 <span class="fs-6 fw-normal text-white-50">/ pax</span></div>
+                        </div>
+                        <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Durasi:</strong> 9 Hari / 12 Hari</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Maskapai:</strong> Saudia Airlines / Garuda Direct</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Hotel Makkah:</strong> Pullman Zamzam (Bintang 5)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Hotel Madinah:</strong> Frontel Al Harithia</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Fullboard Buffet Hotel Bintang 5</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Kereta Cepat Haramain Express</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Perlengkapan Exclusive Premium</li>
+                            </ul>
+                            <a href="#konsultasi" onclick="setPackage('Paket Umroh VIP Bintang 5')" class="btn btn-gold w-100 py-2 rounded-pill">Pesan Paket Ini</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paket Plus Turkey/Dubai -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card h-100 d-flex flex-column">
+                        <div class="package-header">
+                            <h4 class="fw-bold mb-1">Umroh Plus Turkey</h4>
+                            <p class="text-white-50 mb-3">Ibadah Sekaligus Wisata Halal</p>
+                            <div class="package-price">Rp 42.500.000 <span class="fs-6 fw-normal text-white-50">/ pax</span></div>
+                        </div>
+                        <div class="p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Durasi:</strong> 12 Hari</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Maskapai:</strong> Turkish Airlines</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Akomodasi:</strong> Hotel Bintang 4/5</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Tour Istanbul & Cappadocia (Bosphorus Cruise)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Full Board Meals & Tour Guide Lokal</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Visa Umroh & Visa Turki Termasuk</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Asuransi Perjalanan Full Cover</li>
+                            </ul>
+                            <a href="#konsultasi" onclick="setPackage('Paket Umroh Plus Turkey')" class="btn btn-outline-gold w-100 py-2 rounded-pill">Pesan Paket Ini</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Perusahaan / Profile Company -->
+    <section id="tentang" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1542816417-0983cbe82752?auto=format&fit=crop&w=800&q=80" class="img-fluid rounded-4 shadow" alt="Profile PT. ABC Tour">
+                        <div class="bg-white p-3 rounded-3 shadow position-absolute bottom-0 end-0 m-3 border-start border-warning border-4 d-none d-sm-block">
+                            <h6 class="fw-bold mb-0">PPIU No. 123/2021</h6>
+                            <small class="text-muted">Izin Resmi Kemenag RI</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <span class="text-warning fw-bold text-uppercase">Profil Perusahaan</span>
+                    <h2 class="fw-bold mb-3 text-navy">PT. ABC Wisata Tour & Travel</h2>
+                    <p class="text-muted">PT. ABC Wisata Tour & Travel adalah penyedia jasa perjalanan ibadah Umroh dan Haji Plus terpercaya di Indonesia yang didirikan dengan tekad memberikan pelayanan ibadah yang aman, amanah, dan berkualitas.</p>
+                    
+                    <div class="mb-4">
+                        <h5 class="fw-bold text-dark"><i class="fas fa-bullseye text-warning me-2"></i>Visi Kami</h5>
+                        <p class="text-muted">Menjadi biro perjalanan umroh dan haji terdepan yang profesional, terpercaya, dan senantiasa mengutamakan kenyamanan serta kekhusyukan jamaah.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="fw-bold text-dark"><i class="fas fa-paper-plane text-warning me-2"></i>Misi Kami</h5>
+                        <ul class="text-muted ps-3">
+                            <li>Memberikan bimbingan ibadah secara maksimal sesuai petunjuk Sunnah.</li>
+                            <li>Menyediakan akomodasi dan fasilitas terbaik serta lokasi terdekat dengan masjid.</li>
+                            <li>Menjaga amanah serta transparansi biaya tanpa ada biaya tersembunyi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Dokumentasi -->
+    <section id="galeri" class="py-5">
+        <div class="container py-4">
+            <div class="section-title text-center">
+                <h2>Galeri & Dokumentasi Keberangkatan</h2>
+                <p>Momen-momen kebersamaan jamaah PT. ABC Tour di Tanah Suci</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=600&q=80" alt="Jamaah di Makkah">
+                        <div class="gallery-overlay">
+                            <div class="text-center p-3">
+                                <h5>Jamaah Umroh VIP</h5>
+                                <p class="small mb-0">Depan Masjidil Haram Makkah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1565552070098-013d47284ad6?auto=format&fit=crop&w=600&q=80" alt="Masjid Nabawi">
+                        <div class="gallery-overlay">
+                            <div class="text-center p-3">
+                                <h5>Ziarah Madinah</h5>
+                                <p class="small mb-0">Pelataran Masjid Nabawi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=600&q=80" alt="Bimbingan Manasik">
+                        <div class="gallery-overlay">
+                            <div class="text-center p-3">
+                                <h5>Bimbingan Manasik</h5>
+                                <p class="small mb-0">Persiapan Sebelum Keberangkatan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1542816417-0983cbe82752?auto=format&fit=crop&w=600&q=80" alt="Keberangkatan Bandara">
+                        <div class="gallery-overlay">
+                            <div class="text-center p-3">
+                                <h5>Pelepasan Jamaah</h5>
+                                <p class="small mb-0">Bandara Soekarno Hatta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=600&q=80" alt="City Tour Taif">
+                        <div class="gallery-overlay">
+                            <div class="text-center p-3">
+                                <h5>City Tour Kota Taif</h5>
+                                <p class="small mb-0">Kunjungan Wisata Sejarah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80" alt="Kereta Cepat Haramain">
+                        <div class="gallery-overlay">
+                            <div class="text-center p-3">
+                                <h5>Fasilitas Kereta Cepat</h5>
+                                <p class="small mb-0">Perjalanan Makkah - Madinah</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Jamaah -->
+    <section id="testimoni" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="section-title text-center">
+                <h2>Apa Kata Jamaah Kami?</h2>
+                <p>Pengalaman berkesan para jamaah yang telah berangkat bersama PT. ABC Tour</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" class="testimonial-img me-3" alt="H. Ahmad Subagja">
+                            <div>
+                                <h6 class="fw-bold mb-0">H. Ahmad Subagja</h6>
+                                <small class="text-muted">Jamaah Umroh VIP 2023</small>
+                            </div>
+                        </div>
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted italic">"Pelayanan luar biasa! Hotel dekat sekali dengan Masjidil Haram, tinggal jalan kaki 2 menit. Muthawwif-nya sabar dan sangat memahami sunnah. Insya Allah berangkat lagi dengan PT. ABC."</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" class="testimonial-img me-3" alt="Hj. Siti Rahmah">
+                            <div>
+                                <h6 class="fw-bold mb-0">Hj. Siti Rahmah</h6>
+                                <small class="text-muted">Jamaah Umroh Reguler 2023</small>
+                            </div>
+                        </div>
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted italic">"Awalnya ragu daftar online, tapi tim PT. ABC sangat kooperatif menjelaskan detail dari pengurusan paspor sampai manasik. Makanan di Makkah dan Madinah juga enak cocok di lidah."</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card testimonial-card h-100">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" class="testimonial-img me-3" alt="Bpk. Hendra & Keluarga">
+                            <div>
+                                <h6 class="fw-bold mb-0">Bpk. Hendra & Keluarga</h6>
+                                <small class="text-muted">Jamaah Umroh Plus Turkey</small>
+                            </div>
+                        </div>
+                        <div class="text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-muted italic">"Perjalanan Umroh Plus Turkey sangat berkesan. Jadwal teratur, tour guide profesional, dan fasilitas bus yang nyaman untuk lansia dan anak-anak. Terima kasih PT. ABC!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-5">
+        <div class="container py-4">
+            <div class="section-title text-center">
+                <h2>Pertanyaan Umum (FAQ)</h2>
+                <p>Informasi seputar pendaftaran dan persyaratan umroh</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Apa saja persyaratan dokumen untuk mendaftar umroh?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Persyaratan dokumen utama meliputi:
+                                    <ul class="mb-0 mt-2">
+                                        <li>Paspor asli (berlaku min. 7 bulan sebelum keberangkatan dengan nama minimal 2 suku kata).</li>
+                                        <li>Fotokopi KTP dan Kartu Keluarga (KK).</li>
+                                        <li>Buku Nikah (bagi suami istri) / Akta Kelahiran (bagi anak-anak).</li>
+                                        <li>Pasfoto terbaru background putih fokus wajah 80% (3x4 = 6 lembar, 4x6 = 6 lembar).</li>
+                                        <li>Buku Kuning Suntik Meningitis.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Berapa Uang Muka (DP) pendaftaran dan kapan pelunasannya?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Uang muka (DP) pendaftaran adalah sebesar <strong>Rp 5.000.000,- per jamaah</strong> untuk mengamankan seat dan tiket pesawat. Pelunasan sisa pembayaran dilakukan paling lambat 30 hari sebelum tanggal keberangkatan.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Apakah ada bimbingan Manasik sebelum berangkat?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Ya, tentu saja. Bimbingan manasik umroh dilaksanakan sebanyak 2 kali (teori dan praktek peragaan ihram/thawaf/sa'i) di hotel/gedung yang telah ditentukan sebelum hari keberangkatan.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item mb-3 border rounded">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Bagaimana jika jamaah membatalkan keberangkatan?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Kebijakan pembatalan mengacu pada regulasi tiket pesawat dan pemesanan hotel yang sudah di-issued. Rincian biaya pembatalan tertera jelas pada lembar Memorandum of Understanding (MoU) saat pendaftaran.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulir Pendaftaran & Lokasi Kantor -->
+    <section id="konsultasi" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                        <h3 class="fw-bold mb-3 text-navy">Formulir Konsultasi & Pendaftaran</h3>
+                        <p class="text-muted mb-4">Isi form di bawah ini untuk konsultasi jadwal & reservasi seat umroh Anda.</p>
+                        
+                        <form id="bookingForm" onsubmit="handleFormSubmit(event)">
+                            <div class="mb-3">
+                                <label class="form-label font-weight-bold">Nama Lengkap</label>
+                                <input type="text" id="formName" class="form-control py-2" placeholder="Masukkan nama sesuai KTP" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Nomor WhatsApp / HP</label>
+                                <input type="tel" id="formPhone" class="form-control py-2" placeholder="Contoh: 081234567890" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Pilihan Paket Umroh</label>
+                                <select id="formPackage" class="form-select py-2">
+                                    <option value="Umroh Reguler Bintang 3">Paket Umroh Reguler (Bintang 3)</option>
+                                    <option value="Umroh VIP Bintang 5">Paket Umroh VIP / Executive (Bintang 5)</option>
+                                    <option value="Umroh Plus Turkey">Paket Umroh Plus Turkey</option>
+                                    <option value="Konsultasi Haji Plus">Konsultasi Haji Plus</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Jumlah Rencana Jamaah</label>
+                                <input type="number" id="formCount" class="form-control py-2" value="1" min="1" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Catatan / Pertanyaan Khusus</label>
+                                <textarea id="formNote" class="form-control" rows="3" placeholder="Contoh: Rencana berangkat bulan November..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold w-100 py-3 rounded-pill fw-bold">Kirim via WhatsApp <i class="fab fa-whatsapp ms-2"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="fw-bold mb-4 text-navy">Kantor Pusat Kami</h3>
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-warning fs-4"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Alamat Kantor</h6>
+                                    <p class="text-muted mb-0">Jl. Buncit Raya No. 123, Mampang Prapatan, Jakarta Selatan, DKI Jakarta 12790</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-warning fs-4"><i class="fas fa-phone-alt"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Telepon / Call Center</h6>
+                                    <p class="text-muted mb-0">(021) 1234-5678 / +62 812-3456-7890</p>
+                                </div>
+                            </div>
+                            <div class="d-flex mb-3">
+                                <div class="me-3 text-warning fs-4"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Email Resmi</h6>
+                                    <p class="text-muted mb-0">info@abctourtravel.co.id</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Embedded Google Maps -->
+                        <div class="rounded-4 overflow-hidden shadow-sm mt-4 border" style="min-height: 250px;">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126920.2818987309!2d106.7891584!3d-6.229728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e00e843c0f%3A0xb304b7bc88223d6a!2sJakarta%20South%2C%20South%20Jakarta%20City%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1690000000000!5m2!1sen!2sid" 
+                                width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890?text=Halo%20PT.%20ABC%20Wisata,%20saya%20ingin%20bertanya%20mengenai%20paket%20Umroh" target="_blank" class="floating-wa" title="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="d-flex align-items-center"><i class="fas fa-kaaba text-warning me-2"></i> PT. ABC WISATA TOUR</h5>
+                    <p class="small text-white-50">Biro Perjalanan Umroh & Haji Plus terpercaya dengan izin resmi Kementerian Agama RI. Berkomitmen melayani jamaah menuju Tanah Suci secara khusus dan sesuai Sunnah.</p>
+                    <div class="d-flex gap-3 fs-5 mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Navigasi</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="#beranda">Beranda</a></li>
+                        <li class="mb-2"><a href="#keunggulan">Keunggulan</a></li>
+                        <li class="mb-2"><a href="#paket">Paket Umroh</a></li>
+                        <li class="mb-2"><a href="#tentang">Tentang Kami</a></li>
+                        <li class="mb-2"><a href="#galeri">Galeri Foto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Legalitas Usaha</h5>
+                    <ul class="list-unstyled small text-white-50">
+                        <li class="mb-2"><strong class="text-white">PPIU No:</strong> 123/2021 Kemenag RI</li>
+                        <li class="mb-2"><strong class="text-white">NIB:</strong> 1234567890123</li>
+                        <li class="mb-2"><strong class="text-white">Anggota:</strong> AMPHURI / HIMPU</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Kontak Cepat</h5>
+                    <p class="small text-white-50 mb-1"><i class="fas fa-map-marker-alt text-warning me-2"></i> Mampang, Jakarta Selatan</p>
+                    <p class="small text-white-50 mb-1"><i class="fas fa-phone text-warning me-2"></i> (021) 1234-5678</p>
+                    <p class="small text-white-50 mb-1"><i class="fab fa-whatsapp text-success me-2"></i> +62 812-3456-7890</p>
+                </div>
+            </div>
+            <hr class="border-secondary">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start small text-white-50">
+                    &copy; 2026 PT. ABC Wisata Tour & Travel. All Rights Reserved.
+                </div>
+                <div class="col-md-6 text-center text-md-end small text-white-50">
+                    Sistem Informasi Portofolio & Keagenan Umroh
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript Helper -->
+    <script>
+        // Set pilihan paket dari tombol paket ke form
+        function setPackage(packageName) {
+            document.getElementById('formPackage').value = packageName;
+        }
+
+        // Handle pengiriman form langsung ke WhatsApp
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('formName').value;
+            const phone = document.getElementById('formPhone').value;
+            const packageVal = document.getElementById('formPackage').value;
+            const count = document.getElementById('formCount').value;
+            const note = document.getElementById('formNote').value;
+
+            const text = `Halo PT. ABC Wisata Tour,%0A%0ASaya ingin berkonsultasi / mendaftar paket Umroh:%0A- *Nama*: ${name}%0A- *No. HP/WA*: ${phone}%0A- *Paket*: ${packageVal}%0A- *Jumlah Jamaah*: ${count} orang%0A- *Catatan*: ${note || '-'}`;
+
+            window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
